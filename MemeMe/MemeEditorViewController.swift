@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeEditorViewController.swift
 //  MemeMe
 //
 //  Created by Jeffrey Chau on 9/09/2015.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -18,22 +18,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomToolbar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
+    var previousText: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let memeTextAttributes = [
-            NSStrokeColorAttributeName : UIColor.blackColor(),
-            NSForegroundColorAttributeName : UIColor.whiteColor(),
-            NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSStrokeWidthAttributeName : -3.0
-        ]
-        
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.textAlignment = .Center
-        bottomTextField.textAlignment = .Center
-        topTextField.delegate = self
-        bottomTextField.delegate = self
+        setupTextFieldOptions(topTextField)
+        setupTextFieldOptions(bottomTextField)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -105,7 +96,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
+        previousText = textField.text
         textField.text = ""
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if (textField.text.isEmpty) {
+            textField.text = previousText
+        }
     }
     
     // MARK: Convenience Methods
@@ -143,17 +141,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     
+    func setupTextFieldOptions(textfield: UITextField) {
+        let memeTextAttributes = [
+            NSStrokeColorAttributeName : UIColor.blackColor(),
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSStrokeWidthAttributeName : -3.0
+        ]
+        
+        textfield.defaultTextAttributes = memeTextAttributes
+        textfield.textAlignment = .Center
+        textfield.delegate = self
+    }
+    
     // MARK: Keyboard Methods
 
     func keyboardWillShow(notification: NSNotification) {
         if bottomTextField.isFirstResponder() {
-            view.frame.origin.y -= getKeyBoardHeight(notification)
+            view.frame.origin.y = -getKeyBoardHeight(notification)
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         if bottomTextField.isFirstResponder() {
-            view.frame.origin.y += getKeyBoardHeight(notification)
+            view.frame.origin.y = 0
         }
     }
     
