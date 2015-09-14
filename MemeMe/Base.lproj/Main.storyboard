@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="C7I-IC-u5r"/>
-                                    <barButtonItem title="Camera" id="jQU-9B-gA8">
+                                    <barButtonItem title="Camera" systemItem="camera" id="jQU-9B-gA8">
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="vXZ-lx-hvc" id="9YZ-v9-b6W"/>
                                         </connections>
