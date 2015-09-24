@@ -54,15 +54,19 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBAction func shareMeme(sender: UIBarButtonItem) {
         let activityViewController = UIActivityViewController(activityItems: ["", generateMemedImage()], applicationActivities: nil)
-        presentViewController(activityViewController, animated: true, completion: {
-            // Save image
-            self.save()
-            // Dismiss sharing VC
-            let presentingVC = self.presentingViewController?.presentingViewController
-            presentingVC?.dismissViewControllerAnimated(true, completion: {});
-            // TODO: pop back to sent memes
-//            self.navigationController?.popToRootViewControllerAnimated(true)
-        })
+        
+        // Completion handler for when the user has successfully shared
+        let completionWithItemsHandler: UIActivityViewControllerCompletionWithItemsHandler =
+        { (type, finished, returnedItems, error) -> () in
+            if finished {
+                self.save()
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
+        
+        activityViewController.completionWithItemsHandler = completionWithItemsHandler
+        
+        presentViewController(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func cancelAll(sender: UIBarButtonItem) {
