@@ -30,7 +30,7 @@
         <scene sceneID="iDS-gb-cCr">
             <objects>
                 <navigationController title="Table" id="Bm0-Cr-qp7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table" image="tableIcon" id="gyR-k7-gDB"/>
+                    <tabBarItem key="tabBarItem" title="" image="tableIcon" id="gyR-k7-gDB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tAL-34-1WO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -47,20 +47,20 @@
         <scene sceneID="90a-ya-KHY">
             <objects>
                 <tableViewController id="Ync-Bp-2cX" customClass="MemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SAM-3g-W0k">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="SAM-3g-W0k">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SavedMemes" textLabel="Gwc-Rl-p6y" style="IBUITableViewCellStyleDefault" id="O10-Rn-VOb">
+                            <tableViewCell contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="SavedMemes" textLabel="Gwc-Rl-p6y" rowHeight="100" style="IBUITableViewCellStyleDefault" id="O10-Rn-VOb">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O10-Rn-VOb" id="h1c-nZ-SdX">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gwc-Rl-p6y">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gwc-Rl-p6y">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact">
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -68,6 +68,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -99,7 +100,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rDQ-f5-Hqe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rDQ-f5-Hqe">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                         </subviews>
@@ -234,7 +235,7 @@
                                 </variation>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jig-tu-Aig" firstAttribute="top" secondItem="Z40-sj-hCj" secondAttribute="bottom" constant="25" id="0zS-kf-ff0"/>
                             <constraint firstItem="jig-tu-Aig" firstAttribute="centerX" secondItem="Z40-sj-hCj" secondAttribute="centerX" id="45r-ao-h1T"/>
@@ -323,7 +324,7 @@
         <scene sceneID="XOX-TZ-CiB">
             <objects>
                 <navigationController title="Collection" id="6Ix-0h-0r1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" image="collectionIcon" id="6Mc-fn-PPI"/>
+                    <tabBarItem key="tabBarItem" title="" image="collectionIcon" id="6Mc-fn-PPI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fG8-CA-P5g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -336,7 +337,7 @@
             </objects>
             <point key="canvasLocation" x="33" y="937"/>
         </scene>
-        <!--Meme Collection View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="JQs-Ge-g4Q">
             <objects>
                 <collectionViewController id="bcE-sb-WQL" customClass="MemeCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -344,7 +345,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="C8Y-vO-6QQ">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -366,7 +367,15 @@
                             <outlet property="delegate" destination="bcE-sb-WQL" id="Xjd-2a-WUk"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="tmh-gw-4hN"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="tmh-gw-4hN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gse-CM-wBf">
+                            <connections>
+                                <segue destination="vXZ-lx-hvc" kind="presentation" id="F1U-bR-FIu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6XQ-wa-5sZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -377,4 +386,7 @@
         <image name="collectionIcon" width="30" height="30"/>
         <image name="tableIcon" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="F1U-bR-FIu"/>
+    </inferredMetricsTieBreakers>
 </document>
