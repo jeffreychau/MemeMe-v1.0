@@ -34,9 +34,9 @@ class MemeCollectionViewController: UICollectionViewController{
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
         let meme = allSavedMemes[indexPath.item]
         
-        // Changing content mode to aspect fit
+        // Changing content mode to aspect fill
         let imageView = UIImageView(image: meme.modifiedImage)
-        imageView.contentMode = .ScaleAspectFit
+        imageView.contentMode = .ScaleAspectFill
         
         cell.backgroundView = imageView
         
