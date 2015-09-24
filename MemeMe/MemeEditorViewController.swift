@@ -60,6 +60,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             // Dismiss sharing VC
             let presentingVC = self.presentingViewController?.presentingViewController
             presentingVC?.dismissViewControllerAnimated(true, completion: {});
+            // TODO: pop back to sent memes
+//            self.navigationController?.popToRootViewControllerAnimated(true)
         })
     }
     
@@ -68,6 +70,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
         shareButton.enabled = false
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: UIImagePickerControllerDelegate Methods
@@ -117,7 +120,12 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     func save() {
         //Create the meme
-        let meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, originalImage: imagePickerView.image!, modifiedImage: generateMemedImage())
+        var meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, originalImage: imagePickerView.image!, modifiedImage: generateMemedImage())
+        
+        // Add it to the memes array on the Application Delegate
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func hideUI(b: Bool) {
